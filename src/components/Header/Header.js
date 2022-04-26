@@ -9,17 +9,19 @@ function Header() {
     { name: "Devices", route: "/devices" },
   ];
   return (
-    <AppBar className="Header" r>
+    <AppBar className="Header" position="fixed">
       <Container maxWidth="xl">
         <Toolbar>
           {pages.map((page) => (
             <Button
+            variant="contained" 
+              color="secondary"
               component={Link}
               key={page.name}
-              sx={{ mx: 1, color: "white", display: "block" }}
+              sx={{ mx: 1, display: "block" }}
               to={page.route}
             >
-              <Typography textAlign="center">{page.name}</Typography>
+              {page.name}
             </Button>
           ))}
         </Toolbar>
